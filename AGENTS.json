@@ -1,0 +1,229 @@
+{
+  "name": "coherex-metaphysical-framework",
+  "description": "A framework for scalable codebase generation, implementing metaphysical programming concepts like Condensation, Rarefaction, Red-Green-Refactor (RGR) Cycles, Test Stratigraphy, Architectural Grids, and Universal Adapters across multiple languages (primarily Python, with examples for TypeScript, C#).",
+  "primary_docs": [
+    "README.md",
+    "docs/index.md",
+    "docs/_extras/guide.md"
+  ],
+  "structure": {
+    "root": {
+      "path": ".",
+      "description": "Root project configuration, documentation, examples, and helper scripts.",
+      "key_files": [
+        "README.md",
+        "LICENSE",
+        "pyproject.toml",
+        "setup.cfg",
+        "requirements.txt",
+        "environment.yml",
+        "bin/coherex-init",
+        "bin/coherex-analyze",
+        "bin/coherex-deploy"
+      ],
+      "dev_commands": {
+        "install": "pip install -e .",
+        "test": "pytest",
+        "lint": "pylint src/coherex/ tests/",
+        "docs_serve": "mkdocs serve"
+      }
+    },
+    "source": {
+      "path": "src/coherex",
+      "description": "Main source code for the Coherex Metaphysical Framework, structured into core components, analysis, adapters, integration, deployment, and more.",
+      "entry": "cli.py",
+      "key_files": [
+        "src/coherex/__init__.py",
+        "src/coherex/cli.py",
+        "src/coherex/core/__init__.py",
+        "src/coherex/core/metaphysics.py",
+        "src/coherex/core/condensation_pipeline.py",
+        "src/coherex/analysis/__init__.py",
+        "src/coherex/analysis/test_archaeologist.py",
+        "src/coherex/analysis/architectural_grid.py",
+        "src/coherex/adapters/__init__.py",
+        "src/coherex/adapters/base.py",
+        "src/coherex/adapters/python/__init__.py",
+        "src/coherex/adapters/python/pytest_adapter.py",
+        "src/coherex/integration/__init__.py",
+        "src/coherex/integration/git_committer.py",
+        "src/coherex/deployment/__init__.py",
+        "src/coherex/deployment/agentic_orchestrator.py"
+      ]
+    },
+    "tests": {
+      "path": "tests",
+      "description": "Self-tests for the Coherex Metaphysical Framework, validating core logic, adapters, and integrations.",
+      "key_files": [
+        "tests/__init__.py",
+        "tests/conftest.py",
+        "tests/test_core/test_metaphysics.py",
+        "tests/test_adapters/test_pytest_adapter.py"
+      ],
+      "dev_commands": {
+        "run_unit": "pytest tests/test_core/",
+        "run_adapters": "pytest tests/test_adapters/",
+        "run_all": "pytest",
+        "coverage": "pytest --cov=src/coherex"
+      }
+    },
+    "docs": {
+      "path": "docs",
+      "description": "Carpentries-style documentation and learning episodes for the framework.",
+      "key_files": [
+        "docs/index.md",
+        "docs/setup.md",
+        "docs/episodes/01-metaphysical-foundation.md",
+        "docs/_extras/guide.md"
+      ]
+    },
+    "examples": {
+      "path": "examples",
+      "description": "Worked examples demonstrating the framework's application in Python, TypeScript, and C#.",
+      "key_files": [
+        "examples/python-demo/",
+        "examples/typescript-demo/",
+        "examples/csharp-demo/",
+        "examples/mixed-stack/"
+      ]
+    }
+  },
+  "workflow": {
+    "development": [
+      "Follow the Red-Green-Refactor (RGR) cycle as the core development methodology.",
+      "Implement features in small, verifiable steps, ensuring each step maintains metaphysical coherence.",
+      "Prioritize test-driven development; write tests before implementing new functionality.",
+      "Refer to Carpentries-style documentation episodes for conceptual understanding and implementation guidance."
+    ],
+    "testing": [
+      "Run unit tests for core components using pytest. Ensure all tests in the `tests/` directory pass.",
+      "Develop and utilize specific adapters for different test frameworks (e.g., pytest, jest, nunit).",
+      "Validate adapter implementations through dedicated tests, ensuring they conform to the `BaseTestAdapter` contract.",
+      "Ensure comprehensive test coverage for all framework modules, aiming for high coverage metrics."
+    ],
+    "ci_cd": {
+      "summary": "CI/CD processes are designed to validate metaphysical consistency and ensure stable, traceable deployments.",
+      "details": [
+        "Automatic generation of atomic commits with metaphysical context (Episode 09: Git integration).",
+        "Agentic deployment orchestration (Episode 10: Deployment), with validation steps to ensure readiness.",
+        "Integration with SAFe/Agile methodologies for planning and tracking condensation/rarefaction cycles."
+      ]
+    }
+  },
+  "conventions": {
+    "language": "Primary language is Python with extensive type hints (PEP 484). Adapters and examples may include TypeScript, C#, etc.",
+    "style": "Adhere to Python's PEP 8 guidelines. Employ clear, modular, and composable functions/classes. Document public APIs with docstrings (PEP 257). Use Pylance for static analysis, **ensuring no 'variable not accessed' warnings or other similar linting issues.**",
+    "commit_message": {
+      "style": "conventional_commits",
+      "format": "<type>(<scope>): <summary>",
+      "types": [
+        "feat", "fix", "refactor", "chore", "docs", "test", "build", "ci", "meta"
+      ],
+      "scopes": [
+        "core", "analysis", "adapters", "integration", "deployment", "frameworks",
+        "industries", "monitoring", "cli", "docs", "examples", "build", "config", "tooling"
+      ],
+      "rules": [
+        "Use lowercase type and optional scope, e.g. feat(core): add condensation engine.",
+        "Summary should be in the imperative mood, max ~72 chars.",
+        "Group changes by primary concern: code changes vs docs vs CI.",
+        "For cross-cutting changes, use a composite scope, e.g. refactor(adapters,core): ...",
+        "Avoid bare summaries without type; prefer the typed format."
+      ],
+      "examples": [
+        "feat(core): implement initial MetaphysicalEngine with RGR cycle",
+        "refactor(adapters): standardize BaseTestAdapter interface for all languages",
+        "test(analysis): add unit tests for TestArchaeologist's stratigraphy logic",
+        "docs(episodes): draft Episode 01: Metaphysical Foundations and concepts",
+        "chore(tooling): update pyproject.toml for new pylance linting rules"
+      ]
+    },
+    "branching": {
+      "preferences": [
+        "Small, focused branches per feature or fix.",
+        "Keep main branch deployable; CI must be green before merging."
+      ]
+    }
+  },
+  "ai_guidelines": {
+    "goals": [
+      "Maintain metaphysical coherence and consistency throughout the codebase.",
+      "Ensure the framework's internal tests remain robust and pass reliably.",
+      "Adhere strictly to conventional commit message formats for clear history tracking.",
+      "Prioritize incremental and explicit changes in all generated code and refactorings, avoiding monolithic commits.",
+      "Promote code clarity, modularity, and strict adherence to Python best practices, especially concerning type hints and linting."
+    ],
+    "dos": [
+      "Ensure all generated or modified Python code passes Pylance's static analysis, specifically avoiding 'variable not accessed' warnings, unused imports, and other linting issues identified by Pylance.",
+      "Add or update tests (pytest for Python) when modifying framework behavior or adding new modules, ensuring test coverage for new functionality.",
+      "Update relevant documentation episodes or guides when introducing significant concepts, API changes, or new usage patterns.",
+      "Use explicit type hints for all function signatures and complex variables to improve code readability and maintainability.",
+      "Run appropriate development commands (e.g., `pytest`, `pylint`) and adhere to their output before suggesting changes or creating commits."
+    ],
+    "donts": [
+      "Do not introduce new global dependencies without clear justification and proper addition to `pyproject.toml` or `requirements.txt`.",
+      "Do not bypass or disable existing tests to make CI pass; address the root cause of failures.",
+      "Do not make sweeping refactors without an explicit rarefaction plan, a dedicated commit message, and ensuring existing test integrity.",
+      "Do not deviate from the Carpentries-style documentation structure, as it's crucial for onboarding and understanding."
+    ]
+  },
+  "tools": {
+    "vscode": {
+      "notes": [
+        "Use this file as long-lived context for VS Code agents or GitHub Copilot agents.",
+        "When asked for commands, prefer using the `dev_commands` sections for reliable execution.",
+        "When generating commits, strictly follow the `conventions.commit_message` rules."
+      ]
+    },
+    "pieces": {
+      "suggested_materials": [
+        {
+          "name": "coherex-framework: project structure",
+          "path": "docs/index.md",
+          "purpose": "Overview of the project structure and primary documentation."
+        },
+        {
+          "name": "coherex-framework: BaseTestAdapter",
+          "path": "src/coherex/adapters/base.py",
+          "purpose": "Reference for implementing new test framework adapters."
+        },
+        {
+          "name": "coherex-framework: PytestAdapter implementation",
+          "path": "src/coherex/adapters/python/pytest_adapter.py",
+          "purpose": "Example implementation of a test adapter, illustrating best practices."
+        },
+        {
+          "name": "coherex-framework: MetaphysicalEngine",
+          "path": "src/coherex/core/metaphysics.py",
+          "purpose": "Core logic for the metaphysical cycle orchestration and central framework concepts."
+        },
+        {
+          "name": "coherex-framework: Conventional Commits",
+          "purpose": "Reference for structured commit messages and project history.",
+          "link": "https://www.conventionalcommits.org/en/v1.0.0/"
+        },
+        {
+          "name": "coherex-framework: Carpentry Guidelines",
+          "purpose": "Reference for documentation and teaching methodology.",
+          "link": "https://carpentries.org/instructor-training/"
+        }
+      ],
+      "cli_examples": [
+        "pieces ask \"Given the coherex-metaphysical-framework agents file, propose a new test for the Jest adapter in TypeScript.\"",
+        "pieces ask \"Using the coherex-metaphysical-framework commit convention, draft a message for a change that refactors the condensation pipeline to improve performance.\"",
+        "pieces ask \"Based on the coherex-metaphysical-framework guidelines, explain why a new Python module should use type hints.\""
+      ],
+      "tags": [
+        "project:coherex-metaphysical-framework",
+        "stack:python",
+        "stack:pytest",
+        "stack:dataclasses",
+        "tooling:pylance",
+        "methodology:rgr",
+        "concept:metaphysical-programming",
+        "style:pep8",
+        "docs:carpentries"
+      ]
+    }
+  }
+}

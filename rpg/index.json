@@ -1,0 +1,74 @@
+{
+  "name": "coherex-framework",
+  "description": "Metaphysical framework for AI-driven code analysis and automation.",
+  "version": "0.1.0",
+  "primary_docs": [
+    "README.md",
+    "docs/index.md"
+  ],
+  "structure": {
+    "src_coherex": {
+      "path": "src/coherex",
+      "description": "Main package containing core logic.",
+      "key_files": [
+        "__init__.py",
+        "cli.py",
+        "core/__init__.py",
+        "core/analyzer.py",
+        "core/committer.py",
+        "core/metaphysics.py",
+        "core/planner.py",
+        "core/renderer.py"
+      ]
+    },
+    "scripts": {
+      "path": "scripts",
+      "description": "Utility scripts for development and CI.",
+      "key_files": [
+        "validate-rpg.py"
+      ]
+    },
+    "tests": {
+      "path": "tests",
+      "description": "Unit and integration test suite for core components.",
+      "key_files": [
+        "conftest.py",
+        "test_core/test_analyzer.py",
+        "test_core/test_committer.py",
+        "test_core/test_metaphysics.py",
+        "test_core/test_planner.py",
+        "test_core/test_renderer.py"
+        // Add any other core test files as they are created or refined.
+        // For example, if you have `test_metaphysical_engine_helpers.py`,
+        // decide if it's a primary test file for architectural validation.
+      ]
+    },
+    "docs_episodes": {
+      "path": "docs/episodes",
+      "description": "Detailed episode-by-episode documentation.",
+      "key_files": [
+        "01-metaphysical-foundation.md",
+        "02-condensation-cycles.md"
+      ]
+    },
+    "rpg_definitions": {
+      "path": "rpg",
+      "description": "Repository Planning Graph definitions.",
+      "key_files": [
+        "index.json"
+      ]
+    }
+  },
+  "ai_guidelines": {
+    "goals": [
+      "Maintain RPG alignment for new features.",
+      "Ensure test coverage for critical paths."
+    ],
+    "dos": [
+      "Update rpg/index.json when adding significant modules/features."
+    ],
+    "donts": [
+      "Introduce new top-level directories without updating rpg/index.json."
+    ]
+  }
+}
