@@ -1,0 +1,40 @@
+# REVISED: src/coherex/config/default.yml
+# COHEREX Framework Configuration
+# This file uses simple, human-readable keys with explanations.
+
+# Core metaphysical settings
+metaphysical:
+  # Condensation threshold (0.0-1.0)
+  # Higher values require more test coverage before considering code "condensed"
+  condensation_threshold: 0.8
+
+  # Enable rarefaction after green phase?
+  auto_rarefaction: true
+
+  # Rarefaction strategies to apply
+  rarefaction_strategies:
+    - extract-method
+    - simplify-interface
+    - reduce-dependencies
+
+# Test adaptation settings
+adapters:
+  # Default test timeout in seconds
+  default_timeout: 30
+
+  # Which adapters to auto-detect and load
+  auto_detect:
+    - pytest
+    - jest
+    - nunit
+
+# Output and reporting
+output:
+  # Generate lesson-style documentation?
+  generate_docs: true
+
+  # Format for commit messages
+  commit_format: metaphysical  # Options: simple, metaphysical, detailed
+
+  # Where to save archaeological data
+  data_dir: .coherex/archaeology
